@@ -1,0 +1,3 @@
+export const PLACEHOLDER_ACTION = 'PLACEHOLDER_ACTION';
+export const SUBMIT_ITEM = 'SUBMIT_ITEM';
+
