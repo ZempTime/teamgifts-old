@@ -1,13 +1,13 @@
 import * as types from '../constants/ActionTypes';
-import storeWhiteboard from '../storeWhiteboard';
 
-const initialState = storeWhiteboard.entities.item;
-
-export default function items(items=initialState, action) {
+export default function items(items={}, action) {
   switch(action.type) {
     case types.SUBMIT_ITEM: {
-      const item = action.payload;
-      return [...items, item];
+      const item = action.payload.itemData;
+      const id = Object.keys(items).length;
+      item["id"] = id;
+
+      return [...items, {id: item}];
     }
 
     default:
